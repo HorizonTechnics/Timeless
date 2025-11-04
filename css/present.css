@@ -1,0 +1,40 @@
+/* Present Page Specific Styles */
+.page-header {
+    background: linear-gradient(
+        to bottom,
+        rgba(28, 35, 49, 1),
+        rgba(157, 130, 255, 0.1),
+        rgba(28, 35, 49, 1)
+    );
+}
+
+.topic-card {
+    border: 1px solid rgba(157, 130, 255, 0.2);
+}
+
+.topic-card:hover {
+    border-color: rgba(157, 130, 255, 0.5);
+    box-shadow: 0 20px 40px rgba(157, 130, 255, 0.3);
+}
+
+/* Scroll behavior for anchors */
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 5rem;
+}
+
+.topic-card:target {
+    animation: highlight 1s ease;
+}
+
+@keyframes highlight {
+    0% {
+        box-shadow: 0 0 0 0 rgba(157, 130, 255, 0.7);
+    }
+    70% {
+        box-shadow: 0 0 0 20px rgba(157, 130, 255, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(157, 130, 255, 0);
+    }
+}

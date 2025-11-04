@@ -1,0 +1,77 @@
+.timeline-container {
+            display: flex;
+            gap: 2rem;
+            padding: 2rem 0;
+        }
+        .nav-panel {
+            position: sticky;
+            top: 6rem;
+            width: 250px;
+            height: fit-content;
+            background: var(--card);
+            border-radius: var(--radius);
+            padding: 1.5rem;
+            max-height: calc(100vh - 8rem);
+            overflow-y: auto;
+        }
+        .nav-panel h3 {
+            font-size: 1.125rem;
+            margin-bottom: 1rem;
+            color: var(--primary);
+        }
+        .nav-panel a {
+            display: block;
+            padding: 0.5rem;
+            color: var(--foreground);
+            text-decoration: none;
+            border-radius: 0.375rem;
+            font-size: 0.875rem;
+            transition: all 0.3s ease;
+            margin-bottom: 0.5rem;
+        }
+        .nav-panel a:hover {
+            background: rgba(157, 130, 255, 0.1);
+            color: var(--accent);
+        }
+        .timeline-content {
+            flex: 1;
+        }
+        .conspiracy-card {
+            background: var(--card);
+            border-radius: var(--radius);
+            padding: 2rem;
+            margin-bottom: 2rem;
+            border-left: 4px solid var(--accent);
+            transition: all 0.3s ease;
+            scroll-margin-top: 5rem; /* pas aan afhankelijk van je headerhoogte */
+        }
+        .conspiracy-card:hover {
+            box-shadow: 0 10px 30px rgba(157, 130, 255, 0.2);
+        }
+        .conspiracy-date {
+            color: var(--accent);
+            font-weight: 600;
+            font-size: 0.875rem;
+            margin-bottom: 0.5rem;
+        }
+        .conspiracy-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        .disclaimer {
+            background: rgba(255, 165, 0, 0.1);
+            border-left: 4px solid orange;
+            padding: 1rem;
+            margin-bottom: 2rem;
+            border-radius: var(--radius);
+        }
+        @media (max-width: 768px) {
+            .timeline-container {
+                flex-direction: column;
+            }
+            .nav-panel {
+                position: relative;
+                width: 100%;
+                top: 0;
+            }
+        }

@@ -1,0 +1,263 @@
+/* Explanation: Styles for individual topic pages (wonders, artifacts, etc.) */
+
+.topic-hero {
+    padding: 6rem 0 4rem;
+    text-align: center;
+    background: linear-gradient(
+        to bottom,
+        rgba(28, 35, 49, 1),
+        rgba(83, 155, 245, 0.1),
+        rgba(28, 35, 49, 1)
+    );
+}
+
+.topic-hero h1 {
+    font-size: 3.5rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    background: linear-gradient(to right, hsl(217, 91%, 60%), hsl(262, 83%, 58%));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.topic-hero p {
+    font-size: 1.25rem;
+    color: hsl(215, 20%, 65%);
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Explanation: Back link navigation */
+.back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: hsl(217, 91%, 60%);
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    transition: all 0.3s ease;
+    font-size: 0.875rem;
+    font-weight: 500;
+}
+
+.back-link:hover {
+    background-color: rgba(83, 155, 245, 0.1);
+    text-decoration: underline;
+}
+
+/* Explanation: Topic content layout */
+.topic-content {
+    padding: 4rem 0;
+}
+
+.content-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 3rem;
+}
+
+/* Explanation: Two-column layout for larger screens */
+@media (min-width: 1024px) {
+    .content-grid {
+        grid-template-columns: 2fr 1fr;
+    }
+}
+
+/* Explanation: Main content area styling */
+.main-content h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: hsl(217, 91%, 60%);
+}
+
+.main-content h3 {
+    font-size: 1.5rem;
+    margin: 2rem 0 1rem;
+    color: hsl(262, 83%, 58%);
+}
+
+.main-content p {
+    margin-bottom: 1.5rem;
+    color: hsl(215, 20%, 75%);
+    line-height: 1.8;
+}
+
+/* Explanation: Image cards with captions */
+.image-card {
+    margin: 2rem 0;
+    border-radius: 1rem;
+    overflow: hidden;
+    background: rgba(46, 56, 77, 0.5);
+    border: 1px solid rgba(83, 155, 245, 0.2);
+}
+
+.image-card img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+}
+
+.image-caption {
+    padding: 1rem;
+    font-size: 0.875rem;
+    color: hsl(215, 20%, 65%);
+    font-style: italic;
+}
+
+/* Explanation: Sticky sidebar with facts */
+.sidebar {
+    background: rgba(46, 56, 77, 0.3);
+    padding: 2rem;
+    border-radius: 1rem;
+    height: fit-content;
+    position: sticky;
+    top: 5rem;
+    border: 1px solid rgba(83, 155, 245, 0.2);
+}
+
+.sidebar h3 {
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+    color: hsl(217, 91%, 60%);
+}
+
+.fact-item {
+    padding: 1rem;
+    margin-bottom: 1rem;
+    background: rgba(83, 155, 245, 0.1);
+    border-radius: 0.5rem;
+    border-left: 3px solid hsl(217, 91%, 60%);
+}
+
+.fact-item strong {
+    color: hsl(262, 83%, 58%);
+    display: block;
+    margin-bottom: 0.5rem;
+    font-size: 0.875rem;
+}
+
+.fact-item p {
+    margin: 0;
+    font-size: 0.875rem;
+    color: hsl(215, 20%, 75%);
+}
+
+/* Explanation: News section with card grid */
+.news-section {
+    margin-top: 4rem;
+    padding-top: 3rem;
+    border-top: 1px solid rgba(83, 155, 245, 0.2);
+}
+
+.news-section h2 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    color: hsl(217, 91%, 60%);
+}
+
+.news-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+}
+
+.news-card {
+    background: rgba(46, 56, 77, 0.5);
+    padding: 1.5rem;
+    border-radius: 1rem;
+    border: 1px solid rgba(83, 155, 245, 0.2);
+    transition: all 0.3s ease;
+}
+
+.news-card:hover {
+    transform: translateY(-0.25rem);
+    border-color: hsl(262, 83%, 58%);
+    box-shadow: 0 10px 30px rgba(83, 155, 245, 0.2);
+}
+
+.news-date {
+    font-size: 0.875rem;
+    color: hsl(215, 20%, 65%);
+    margin-bottom: 0.5rem;
+}
+
+.news-card h3 {
+    font-size: 1.125rem;
+    margin-bottom: 0.5rem;
+    color: hsl(210, 40%, 98%);
+}
+
+.news-card p {
+    font-size: 0.875rem;
+    color: hsl(215, 20%, 70%);
+    margin: 0;
+    line-height: 1.6;
+}
+
+/* Explanation: Responsive adjustments for tablets */
+@media (max-width: 1024px) {
+    .content-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .sidebar {
+        position: static;
+    }
+    
+    .topic-hero h1 {
+        font-size: 2.5rem;
+    }
+}
+
+/* Explanation: Responsive adjustments for mobile */
+@media (max-width: 768px) {
+    .topic-hero {
+        padding: 4rem 0 2rem;
+    }
+    
+    .topic-hero h1 {
+        font-size: 2rem;
+    }
+    
+    .topic-hero p {
+        font-size: 1rem;
+    }
+    
+    .main-content h2 {
+        font-size: 1.5rem;
+    }
+    
+    .main-content h3 {
+        font-size: 1.25rem;
+    }
+    
+    .news-grid {
+         grid-template-columns: 1fr;
+    }
+
+    .sidebar {
+        padding: 1.5rem;
+    }
+}
+
+/* Explanation: Print styles for topic pages */
+@media print {
+    .navbar,
+    .footer,
+    .news-section,
+    .sidebar {
+        display: none;
+    }
+    
+    .topic-hero {
+        padding: 2rem 0;
+        background: none;
+    }
+    
+    .main-content {
+        max-width: 100%;
+    }
+}

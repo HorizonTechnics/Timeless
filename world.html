@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Timeless - Cosmos</title>
+    <meta name="description" content="Explore humanity's remarkable journey from ancient civilizations to the distant future. Discover major historical events, current innovations, and tomorrow's possibilities.">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/world.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <!-- Explanation: Animated clock icon with rotating hands -->
+                <svg class="clock-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <line class="clock-hour-hand" x1="12" y1="12" x2="12" y2="8"></line>
+                    <line class="clock-minute-hand" x1="12" y1="12" x2="12" y2="6"></line>
+                </svg>
+                <span class="logo-text">Timeless</span>
+            </a>
+
+            <div class="nav-menu" id="navMenu">
+                <a href="index.html" class="nav-link active" data-translate="home">Home</a>
+                
+                <div class="nav-dropdown">
+                    <a href="past.html" class="nav-link dropdown-toggle" data-translate="past">
+                        Past
+                        <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="6 9 12 15 18 9"></polyline>
+                        </svg>
+                    </a>
+                    <div class="dropdown-content">
+                        <a href="ancient.html" data-translate="ancientCivilizations">Ancient Civilizations</a>
+                        <a href="classicalEra.html" data-translate="classicalEra">Classical Era</a>
+                        <a href="middleAges.html" data-translate="middleAges">Middle Ages</a>
+                        <a href="renaissance.html" data-translate="renaissance">Renaissance</a>
+                        <a href="exploration.html" data-translate="ageOfExploration">Age of Exploration</a>
+                        <a href="industrial.html" data-translate="industrialRevolution">Industrial Revolution</a>
+                        <a href="wars.html" data-translate="worldWars">World Wars</a>
+                        <a href="coldwar.html" data-translate="coldWar">Cold War</a>
+                    </div>
+                </div>
+                
+                <div class="nav-dropdown">
+                <a href="present.html" class="nav-link dropdown-toggle" data-translate="present">
+                        Present
+                        <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="6 9 12 15 18 9"></polyline>
+                        </svg>
+                    </a>
+                    
+                    <div class="dropdown-content">
+                        <!-- Explanation:  -->
+                        <a href="artifacts.html" data-translate="artifactsTime">Artifacts Through Time</a>
+                        <a href="mythology.html" data-translate="mythical">Mythical Stories</a>
+                        <!-- Explanation:  -->
+                        <a href="wonders.html" data-translate="worldWonders">World Wonders</a>
+                        <a href="conspiracy.html" data-translate="conspiracy">Conspiracy Theories</a>
+                        <a href="technology.html" data-translate="technology">Technology</a>
+                        <a href="space.html" data-translate="spaceExploration">Space Exploration</a>
+                        <a href="climate.html" data-translate="climateChange">Climate Change</a>
+                        <a href="society.html" data-translate="globalSociety">Global Society</a>
+                    </div>
+                </div>
+
+                <div class="nav-dropdown">
+                    <a href="future.html" class="nav-link dropdown-toggle" data-translate="future">
+                        Future
+                        <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="6 9 12 15 18 9"></polyline>
+                        </svg>
+                    </a>
+                    <div class="dropdown-content">
+                        <a href="predictions.html" data-translate="predictions">Predictions</a>
+                        <a href="space-colonization.html" data-translate="spaceColonization">Space Colonization</a>
+                        <a href="ai.html" data-translate="ai">Artificial Intelligence</a>
+                        <a href="sustainability.html" data-translate="sustainability">Sustainability</a>
+                        <a href="biotech.html"data-translate="biotechnology">Biotechnology</a>
+                    </div>
+                </div>
+
+                <div class="nav-dropdown">
+                    <a href="store.html" class="nav-link dropdown-toggle" data-translate="store">
+                        Store
+                        <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="6 9 12 15 18 9"></polyline>
+                        </svg>
+                    </a>
+                    <div class="dropdown-content">
+                        <a href="store.html"data-translate="subscription">Subscription</a>
+                    </div>
+                </div>
+
+                <div class="nav-dropdown">
+                    <a href="world.html" class="nav-link dropdown-toggle" data-translate="cosmos">
+                        Cosmos
+                        <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="6 9 12 15 18 9"></polyline>
+                        </svg>
+                    </a>
+                    <div class="dropdown-content">
+                        <a href="world.html" data-translate="solarSystem">Solar System</a>
+                    </div>
+                </div>
+            </div>
+
+            <button class="mobile-menu-toggle" id="mobileMenuToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Explanation: 3D Solar System Canvas Container -->
+    <div id="canvas-container"></div>
+
+    <!-- Explanation: Info panel with instructions (hides when planet selected) -->
+    <div class="info-panel" id="infoPanel">
+        <h2>Solar System</h2>
+        <p>Click on a planet to follow it and view details. Use mouse to rotate and scroll to zoom.</p>
+    </div>
+
+    <!-- Explanation: Planet details panel (shows when planet selected) -->
+    <div class="planet-details" id="planetDetails">
+        <div class="planet-header">
+            <div class="planet-color" id="detailColor"></div>
+            <h3 id="detailName"></h3>
+        </div>
+        <p class="planet-desc" id="detailDesc"></p>
+        <div class="planet-stats" id="detailStats"></div>
+    </div>
+
+    <!-- Explanation: Planet selector buttons at bottom -->
+    <div class="planet-selector">
+        <div class="planet-buttons" id="planetButtons"></div>
+    </div>
+
+    <!-- Explanation: Control buttons including new speed control -->
+    <div class="controls">
+        <button class="control-btn active" id="playBtn" onclick="toggleRotation()">Pause</button>
+        <button class="control-btn" onclick="resetView()">Reset View</button>
+        <button class="control-btn" onclick="toggleOrbits()">Toggle Orbits</button>
+        <!-- Explanation: Speed control cycles through 1x, 2x, 4x, 6x -->
+        <button class="control-btn" id="speedBtn" onclick="cycleSpeed()">Speed: 1x</button>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="js/world.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

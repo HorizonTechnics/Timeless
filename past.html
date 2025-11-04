@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Past - Timeless</title>
+    <meta name="description" content="Explore pivotal moments, remarkable civilizations, and transformative events that shaped human history">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/past.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <!-- Explanation: Animated clock icon with rotating hands -->
+                <svg class="clock-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <line class="clock-hour-hand" x1="12" y1="12" x2="12" y2="8"></line>
+                    <line class="clock-minute-hand" x1="12" y1="12" x2="12" y2="6"></line>
+                </svg>
+                <span class="logo-text">Timeless</span>
+            </a>
+
+            <div class="nav-menu" id="navMenu">
+                <a href="index.html" class="nav-link active" data-translate="home">Home</a>
+                
+                <div class="nav-dropdown">
+                    <a href="past.html" class="nav-link dropdown-toggle" data-translate="past">
+                        Past
+                        <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="6 9 12 15 18 9"></polyline>
+                        </svg>
+                    </a>
+                    <div class="dropdown-content">
+                        <a href="ancient.html" data-translate="ancientCivilizations">Ancient Civilizations</a>
+                        <a href="classicalEra.html" data-translate="classicalEra">Classical Era</a>
+                        <a href="middleAges.html" data-translate="middleAges">Middle Ages</a>
+                        <a href="renaissance.html" data-translate="renaissance">Renaissance</a>
+                        <a href="exploration.html" data-translate="ageOfExploration">Age of Exploration</a>
+                        <a href="industrial.html" data-translate="industrialRevolution">Industrial Revolution</a>
+                        <a href="wars.html" data-translate="worldWars">World Wars</a>
+                        <a href="coldwar.html" data-translate="coldWar">Cold War</a>
+                    </div>
+                </div>
+                
+                <div class="nav-dropdown">
+                <a href="present.html" class="nav-link dropdown-toggle" data-translate="present">
+                        Present
+                        <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="6 9 12 15 18 9"></polyline>
+                        </svg>
+                    </a>
+                    
+                    <div class="dropdown-content">
+                        <!-- Explanation:  -->
+                        <a href="artifacts.html" data-translate="artifactsTime">Artifacts Through Time</a>
+                        <a href="mythology.html" data-translate="mythical">Mythical Stories</a>
+                        <!-- Explanation:  -->
+                        <a href="wonders.html" data-translate="worldWonders">World Wonders</a>
+                        <a href="conspiracy.html" data-translate="conspiracy">Conspiracy Theories</a>
+                        <a href="technology.html" data-translate="technology">Technology</a>
+                        <a href="space.html" data-translate="spaceExploration">Space Exploration</a>
+                        <a href="climate.html" data-translate="climateChange">Climate Change</a>
+                        <a href="society.html" data-translate="globalSociety">Global Society</a>
+                    </div>
+                </div>
+
+                <div class="nav-dropdown">
+                    <a href="future.html" class="nav-link dropdown-toggle" data-translate="future">
+                        Future
+                        <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="6 9 12 15 18 9"></polyline>
+                        </svg>
+                    </a>
+                    <div class="dropdown-content">
+                        <a href="predictions.html" data-translate="predictions">Predictions</a>
+                        <a href="space-colonization.html" data-translate="spaceColonization">Space Colonization</a>
+                        <a href="ai.html" data-translate="ai">Artificial Intelligence</a>
+                        <a href="sustainability.html" data-translate="sustainability">Sustainability</a>
+                        <a href="biotech.html"data-translate="biotechnology">Biotechnology</a>
+                    </div>
+                </div>
+
+                <div class="nav-dropdown">
+                    <a href="store.html" class="nav-link dropdown-toggle" data-translate="store">
+                        Store
+                        <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="6 9 12 15 18 9"></polyline>
+                        </svg>
+                    </a>
+                    <div class="dropdown-content">
+                        <a href="store.html"data-translate="subscription">Subscription</a>
+                    </div>
+                </div>
+
+                <div class="nav-dropdown">
+                    <a href="world.html" class="nav-link dropdown-toggle" data-translate="cosmos">
+                        Cosmos
+                        <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="6 9 12 15 18 9"></polyline>
+                        </svg>
+                    </a>
+                    <div class="dropdown-content">
+                        <a href="world.html" data-translate="solarSystem">Solar System</a>
+                    </div>
+                </div>
+            </div>
+
+            <button class="mobile-menu-toggle" id="mobileMenuToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+            <button class="mobile-menu-toggle" id="mobileMenuToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <header class="page-header">
+        <div class="container">
+            <svg class="page-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10"></circle>
+                <polyline points="12 6 12 12 16 14"></polyline>
+            </svg>
+            <h1>The Past</h1>
+            <p>Explore the pivotal moments, remarkable civilizations, and transformative events that shaped human history</p>
+        </div>
+    </header>
+
+    <!-- Topics Grid -->
+    <section class="topics-section">
+        <div class="container">
+            <div class="topics-grid">
+                <!-- Ancient Civilizations -->
+                <article class="topic-card" id="ancient">
+                    <div class="topic-image">
+                        <img src="images/ancient-civilizations.jpg" alt="Ancient Civilizations">
+                    </div>
+                    <div class="topic-content">
+                        <h3>Ancient Civilizations</h3>
+                        <p>From Mesopotamia to Rome - the dawn of human civilization and early societies</p>
+                        <a href="ancient.html" class="topic-link">
+                            Explore
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <line x1="5" y1="12" x2="19" y2="12"></line>
+                                <polyline points="12 5 19 12 12 19"></polyline>
+                            </svg>
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Classical Era -->
+                <article class="topic-card" id="classical">
+                    <div class="topic-image">
+                        <img src="images/classical-era.jpg" alt="Classical Era">
+                    </div>
+                    <div class="topic-content">
+                        <h3>Classical Era</h3>
+                        <p>The golden age of Greece and Rome that shaped Western civilization</p>
+                        <a href="classicalEra.html" class="topic-link">
+                            Explore
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <line x1="5" y1="12" x2="19" y2="12"></line>
+                                <polyline points="12 5 19 12 12 19"></polyline>
+                            </svg>
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Middle Ages -->
+                <article class="topic-card" id="medieval">
+                    <div class="topic-image">
+                        <img src="images/middle-ages.jpg" alt="Middle Ages">
+                    </div>
+                    <div class="topic-content">
+                        <h3>Middle Ages</h3>
+                        <p>Medieval Europe, the Byzantine Empire, and the rise of Islam</p>
+                        <a href="middleAges.html" class="topic-link">
+                            Explore
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <line x1="5" y1="12" x2="19" y2="12"></line>
+                                <polyline points="12 5 19 12 12 19"></polyline>
+                            </svg>
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Renaissance -->
+                <article class="topic-card" id="renaissance">
+                    <div class="topic-image">
+                        <img src="images/renaissance.jpg" alt="Renaissance">
+                    </div>
+                    <div class="topic-content">
+                        <h3>Renaissance</h3>
+                        <p>A cultural rebirth that transformed art, science, and human thought</p>
+                        <a href="renaissance.html" class="topic-link">
+                            Explore
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <line x1="5" y1="12" x2="19" y2="12"></line>
+                                <polyline points="12 5 19 12 12 19"></polyline>
+                            </svg>
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Age of Exploration -->
+                <article class="topic-card" id="exploration">
+                    <div class="topic-image">
+                        <img src="images/exploration.jpg" alt="Age of Exploration">
+                    </div>
+                    <div class="topic-content">
+                        <h3>Age of Exploration</h3>
+                        <p>Discovering new worlds and the beginning of global interconnection</p>
+                        <a href="exploration.html" class="topic-link">
+                            Explore
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <line x1="5" y1="12" x2="19" y2="12"></line>
+                                <polyline points="12 5 19 12 12 19"></polyline>
+                            </svg>
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Industrial Revolution -->
+                <article class="topic-card" id="industrial">
+                    <div class="topic-image">
+                        <img src="images/industrial.jpg" alt="Industrial Revolution">
+                    </div>
+                    <div class="topic-content">
+                        <h3>Industrial Revolution</h3>
+                        <p>The technological transformation that created the modern world</p>
+                        <a href="industrial.html" class="topic-link">
+                            Explore
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <line x1="5" y1="12" x2="19" y2="12"></line>
+                                <polyline points="12 5 19 12 12 19"></polyline>
+                            </svg>
+                        </a>
+                    </div>
+                </article>
+
+                <!-- World Wars -->
+                <article class="topic-card" id="wars">
+                    <div class="topic-image">
+                        <img src="images/world-wars.jpg" alt="World Wars">
+                    </div>
+                    <div class="topic-content">
+                        <h3>World Wars</h3>
+                        <p>Global conflicts that reshaped nations, borders, and human history</p>
+                        <a href="wars.html" class="topic-link">
+                            Explore
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <line x1="5" y1="12" x2="19" y2="12"></line>
+                                <polyline points="12 5 19 12 12 19"></polyline>
+                            </svg>
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Cold War Era -->
+                <article class="topic-card" id="coldwar">
+                    <div class="topic-image">
+                        <img src="images/cold-war.jpg" alt="Cold War Era">
+                    </div>
+                    <div class="topic-content">
+                        <h3>Cold War Era</h3>
+                        <p>Ideological struggle and the space race that defined the late 20th century</p>
+                        <a href="coldwar.html" class="topic-link">
+                            Explore
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <line x1="5" y1="12" x2="19" y2="12"></line>
+                                <polyline points="12 5 19 12 12 19"></polyline>
+                            </svg>
+                        </a>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <!-- Brand -->
+                <div class="footer-brand">
+                    <a href="index.html" class="footer-logo">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <polyline points="12 6 12 12 16 14"></polyline>
+                        </svg>
+                        <span>Timeless</span>
+                    </a>
+                    <p>
+                    <span data-translate="txtFooter"> Exploring humanity's journey through time - from ancient civilizations to future possibilities.</span>
+                    </p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Twitter">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"></path>
+                            </svg>
+                        </a>
+                        <a href="#" aria-label="GitHub">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22"></path>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Past -->
+                <div class="footer-column">
+                    <h3 data-translate="past">Past</h3>
+                    <a href="ancient.html" data-translate="ancientCivilizations">Ancient Civilizations</a>
+                    <a href="classicalEra.html" data-translate="classicalEra">Classical Era</a>
+                    <a href="middleAges.html" data-translate="middleAges">Middle Ages</a>
+                    <a href="renaissance.html" data-translate="renaissance">Renaissance</a>
+                    <a href="exploration.html" data-translate="ageOfExploration">Age of Exploration</a>
+                    <a href="industrial.html" data-translate="industrialRevolution">Industrial Revolution</a>
+                    <a href="wars.html" data-translate="worldWars">World Wars</a>
+                    <a href="coldwar.html" data-translate="coldWar">Cold War</a>
+                </div>
+
+                <!-- Present -->
+                <div class="footer-column">
+                    <h3 data-translate="present">Present</h3>
+                    <!-- Explanation: Added link to Artifacts Through Time page -->
+                    <a href="artifacts.html" data-translate="artifactsTime">Artifacts Through Time</a>
+                    <a href="mythology.html" data-translate="mythical">Mythical Stories</a>
+                    <!-- Explanation: New topic added for 7 World Wonders -->
+                    <a href="wonders.html" data-translate="worldWonders">World Wonders</a>
+                    <a href="conspiracy.html" data-translate="conspiracy">Conspiracy Theories</a>
+                    <a href="technology.html" data-translate="technology">Technology</a>
+                    <a href="space.html" data-translate="spaceExploration">Space Exploration</a>
+                    <a href="climate.html" data-translate="climateChange">Climate Change</a>
+                    <a href="society.html" data-translate="globalSociety">Global Society</a>
+                    
+
+                </div>
+
+                <!-- Future -->
+                <div class="footer-column">
+                    <h3 data-translate="future">Future</h3>
+                    <!-- Explanation: Added links to legal pages -->
+                    <a href="predictions.html" data-translate="predictions">Predictions</a>
+                    <a href="space-colonization.html" data-translate="spaceColonization">Space Colonization</a>
+                    <a href="ai.html" data-translate="ai">Artificial Intelligence</a>
+                    <a href="sustainability.html" data-translate="sustainability">Sustainability</a>
+                    <a href="biotech.html" data-translate="biotechnology">Biotechnology</a>
+                </div>
+
+                <!-- About -->
+                <div class="footer-column">
+                    <h3 data-translate="about">About</h3>
+                    <!-- Explanation: Added links to legal pages -->
+                    <a href="about.html" data-translate="aboutUs">About Us</a>
+                    <a href="contact.html" data-translate="contact">Contact</a>
+                    <a href="privacy.html" data-translate="privacyPolicy">Privacy Policy</a>
+                    <a href="terms.html" data-translate="termsOfService">Terms of Service</a>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>
+                    2025 Timeless. <span data-translate="copyright">&copy; All rights reserved ®.</span>
+
+                </p>
+                <div class="footer-links">
+
+                    <a href="#" data-translate="accessibility">Accessibility</a>
+                    <!-- Explanation: Language switcher for multilingual support -->
+                    <div class="language-switcher">
+                        <button class="lang-btn active" data-lang="en">EN</button>
+                        <button class="lang-btn" data-lang="nl">NL</button>
+                        <button class="lang-btn" data-lang="de">DE</button>
+                        <button class="lang-btn" data-lang="fr">FR</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
