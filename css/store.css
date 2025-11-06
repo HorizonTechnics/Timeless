@@ -354,3 +354,10 @@ html {
                 grid-template-columns: 1fr;
             }
         }
+
+    /* Store Page Plans Grid */
+@media (max-width: 1024px) {
+    .plans-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}

@@ -735,6 +735,8 @@ function cycleSpeed() {
     }
 }
 
+
+
 // Explanation: Start the application
 init();
 

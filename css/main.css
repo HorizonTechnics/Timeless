@@ -616,5 +616,212 @@ body {
 }
 
 
+/* Your existing main.css content */
+.footer-links a:hover {
+    color: #3b82f6;
+}
 
-        
+/* ============================================
+   RESPONSIVE NAVIGATION STYLES
+   Add this to your main.css file
+   ============================================ */
+
+/* Mobile menu toggle button - initially hidden */
+.mobile-menu-toggle {
+    display: none;
+    flex-direction: column;
+}
+
+/* Mobile menu toggle button - initially hidden */
+.mobile-menu-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 24px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    z-index: 1001;
+}
+
+.mobile-menu-toggle span {
+    display: block;
+    width: 100%;
+    height: 3px;
+    background: currentColor;
+    border-radius: 3px;
+    transition: all 0.3s ease;
+}
+
+/* Active state for hamburger menu (transforms to X) */
+.mobile-menu-toggle.active span:nth-child(1) {
+    transform: translateY(10.5px) rotate(45deg);
+}
+
+.mobile-menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.mobile-menu-toggle.active span:nth-child(3) {
+    transform: translateY(-10.5px) rotate(-45deg);
+}
+
+/* Tablet breakpoint: 768px - 1024px */
+@media (max-width: 1024px) {
+    .nav-container {
+        padding: 1rem;
+    }
+
+    .nav-dropdown .dropdown-content {
+        min-width: 180px;
+    }
+
+    .nav-link {
+        padding: 0.5rem 0.75rem;
+        font-size: 0.9rem;
+    }
+}
+
+/* Mobile breakpoint: below 768px */
+@media (max-width: 768px) {
+    .mobile-menu-toggle {
+        display: flex;
+    }
+
+    .nav-menu {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 280px;
+        height: 100vh;
+        background: rgba(17, 24, 39, 0.98);
+        backdrop-filter: blur(10px);
+        padding: 80px 20px 20px;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0;
+        overflow-y: auto;
+        overflow-x: hidden;
+        -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+        transition: right 0.3s ease;
+        z-index: 1000;
+        box-shadow: -5px 0 15px rgba(0, 0, 0, 0.3);
+    }
+
+    .nav-menu.active {
+        right: 0;
+    }
+
+    .nav-link {
+        width: 100%;
+        padding: 1rem 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        font-size: 1rem;
+    }
+
+    .nav-link.active {
+        border-bottom-color: rgba(59, 130, 246, 0.5);
+    }
+
+    /* Mobile dropdown behavior */
+    .nav-dropdown {
+        width: 100%;
+    }
+
+    .nav-dropdown .dropdown-toggle {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .nav-dropdown .dropdown-content {
+        position: static;
+        width: 100%;
+        opacity: 1;
+        visibility: visible;
+        transform: none;
+        background: transparent;
+        box-shadow: none;
+        padding: 0;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease;
+    }
+
+    .nav-dropdown.active .dropdown-content {
+        max-height: 500px;
+    }
+
+    .nav-dropdown .dropdown-content a {
+        padding: 0.75rem 0 0.75rem 1.5rem;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        font-size: 0.9rem;
+    }
+
+    .nav-dropdown .chevron {
+        transition: transform 0.3s ease;
+    }
+
+    .nav-dropdown.active .chevron {
+        transform: rotate(180deg);
+    }
+
+    /* Prevent body scroll when menu is open */
+    body.menu-open {
+        overflow: hidden;
+    }
+
+    /* Overlay for mobile menu */
+    .nav-menu::before {
+        content: '';
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background: rgba(0, 0, 0, 0.5);
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.3s ease;
+        z-index: -1;
+    }
+
+    .nav-menu.active::before {
+        opacity: 1;
+        visibility: visible;
+    }
+}
+
+/* Small mobile breakpoint: below 480px */
+@media (max-width: 480px) {
+    .nav-menu {
+        width: 100%;
+        right: -100%;
+    }
+
+    .logo-text {
+        font-size: 1.25rem;
+    }
+
+    .clock-icon {
+        width: 28px;
+        height: 28px;
+    }
+}
+
+/* Landscape orientation adjustments */
+@media (max-height: 600px) and (orientation: landscape) {
+    .nav-menu {
+        padding-top: 60px;
+    }
+
+    .nav-link {
+        padding: 0.75rem 0;
+    }
+
+    .nav-dropdown .dropdown-content a {
+        padding: 0.5rem 0 0.5rem 1.5rem;
+    }
+}

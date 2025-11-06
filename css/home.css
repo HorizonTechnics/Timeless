@@ -258,3 +258,10 @@
         font-size: 2rem;
     }
 }
+
+/* Hero Section Responsiveness */
+@media (max-width: 1024px) {
+    .hero {
+        min-height: 70vh;
+    }
+}

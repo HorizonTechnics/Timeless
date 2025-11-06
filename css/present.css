@@ -38,3 +38,9 @@ html {
         box-shadow: 0 0 0 0 rgba(157, 130, 255, 0);
     }
 }
+/* Page Header Responsiveness */
+@media (max-width: 768px) {
+    .page-header {
+        padding: 3rem 1rem;
+    }
+}

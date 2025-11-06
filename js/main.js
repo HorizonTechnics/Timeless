@@ -1,6 +1,6 @@
 // Main JavaScript for Timeless Website
 
-// Explanation: Complete translation data for all supported languages
+//  Complete translation data for all supported languages
 const translations = {
     en: {
         home: "Home",
@@ -189,10 +189,10 @@ const translations = {
     }
 };
 
-// Explanation: Get current language from localStorage or default to English
+//  Get current language from localStorage or default to English
 let currentLang = localStorage.getItem('language') || 'en';
 
-// Explanation: Function to translate page content dynamically
+// Function to translate page content dynamically
 function translatePage(lang) {
     const t = translations[lang];
     if (!t) return;
@@ -209,7 +209,7 @@ function translatePage(lang) {
     document.documentElement.lang = lang === 'nl' ? 'nl' : lang === 'de' ? 'de' : lang === 'fr' ? 'fr' : 'en';
 }
 
-// Explanation: Function to change website language
+// Function to change website language
 function changeLanguage(lang) {
     currentLang = lang;
     localStorage.setItem('language', lang);
@@ -239,7 +239,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
     
-    // Explanation: Set initial language on page load
+    // Set initial language on page load
     changeLanguage(currentLang);
     
     // ... rest of existing code ...
@@ -254,7 +254,7 @@ document.addEventListener('DOMContentLoaded', function() {
         mobileMenuToggle.addEventListener('click', function() {
             navMenu.classList.toggle('active');
             
-            // Explanation: Animate hamburger icon transformation
+            // Animate hamburger icon transformation
             const spans = this.querySelectorAll('span');
             if (navMenu.classList.contains('active')) {
                 spans[0].style.transform = 'rotate(45deg) translate(5px, 5px)';
@@ -267,7 +267,7 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
         
-        // Explanation: Close mobile menu when clicking on a link
+        //  Close mobile menu when clicking on a link
         const navLinks = navMenu.querySelectorAll('a');
         navLinks.forEach(link => {
             link.addEventListener('click', function() {
@@ -280,7 +280,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
-    // Explanation: Dropdown Menu functionality for Desktop
+    //  Dropdown Menu functionality for Desktop
     const dropdowns = document.querySelectorAll('.nav-dropdown');
     dropdowns.forEach(dropdown => {
         const toggle = dropdown.querySelector('.dropdown-toggle');
@@ -305,7 +305,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
     
-    // Explanation: Language switcher event listeners
+    //  Language switcher event listeners
     const langButtons = document.querySelectorAll('.lang-btn');
     langButtons.forEach(btn => {
         btn.addEventListener('click', function() {
@@ -314,7 +314,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
     
-    // Explanation: Set initial language on page load
+    //  Set initial language on page load
     changeLanguage(currentLang);
     
     // Explanation: Smooth scroll for anchor links
@@ -334,7 +334,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
     
-    // Explanation: Intersection Observer for scroll animations
+    //  Intersection Observer for scroll animations
     const observerOptions = {
         threshold: 0.1,
         rootMargin: '0px 0px -50px 0px'
@@ -349,7 +349,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }, observerOptions);
     
-    // Explanation: Observe topic cards for animation on scroll
+    //  Observe topic cards for animation on scroll
     document.querySelectorAll('.topic-card').forEach(card => {
         card.style.opacity = '0';
         card.style.transform = 'translateY(20px)';
@@ -357,7 +357,7 @@ document.addEventListener('DOMContentLoaded', function() {
         observer.observe(card);
     });
     
-    // Explanation: Observe timeline cards for animation
+    // Observe timeline cards for animation
     document.querySelectorAll('.timeline-card').forEach(card => {
         card.style.opacity = '0';
         card.style.transform = 'translateY(20px)';
@@ -365,7 +365,7 @@ document.addEventListener('DOMContentLoaded', function() {
         observer.observe(card);
     });
     
-    // Explanation: Add active state to current page in navigation
+    //  Add active state to current page in navigation
     const currentPath = window.location.pathname;
     const navLinks = document.querySelectorAll('.nav-link');
     
@@ -378,7 +378,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
-// Explanation: Handle window resize events
+//  Handle window resize events
 let resizeTimer;
 window.addEventListener('resize', function() {
     clearTimeout(resizeTimer);
@@ -398,7 +398,105 @@ window.addEventListener('resize', function() {
     }, 250);
 });
 
-// Explanation: Add parallax effect to hero image
+// Mobile menu toggle functionality
+document.addEventListener('DOMContentLoaded', function() {
+    const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+    const navMenu = document.getElementById('navMenu');
+    const navDropdowns = document.querySelectorAll('.nav-dropdown');
+    
+    // Toggle mobile menu
+    if (mobileMenuToggle) {
+        mobileMenuToggle.addEventListener('click', function(e) {
+            e.stopPropagation(); // Prevent event bubbling
+            this.classList.toggle('active');
+            navMenu.classList.toggle('active');
+            document.body.classList.toggle('menu-open');
+            
+            // Ensure menu can scroll
+            if (navMenu.classList.contains('active')) {
+                navMenu.scrollTop = 0; // Reset scroll position
+            }
+        });
+    }
+    
+    // Close menu when clicking outside
+    document.addEventListener('click', function(e) {
+        if (!e.target.closest('.nav-container') && navMenu.classList.contains('active')) {
+            mobileMenuToggle.classList.remove('active');
+            navMenu.classList.remove('active');
+            document.body.classList.remove('menu-open');
+            
+            // Close all dropdowns
+            navDropdowns.forEach(dropdown => {
+                dropdown.classList.remove('active');
+            });
+        }
+    });
+    
+    // Prevent clicks inside menu from closing it
+    navMenu.addEventListener('click', function(e) {
+        e.stopPropagation();
+    });
+    
+    // Handle dropdown clicks on mobile
+    navDropdowns.forEach(dropdown => {
+        const toggle = dropdown.querySelector('.dropdown-toggle');
+        
+        toggle.addEventListener('click', function(e) {
+            if (window.innerWidth <= 768) {
+                e.preventDefault();
+                
+                // Close other dropdowns
+                navDropdowns.forEach(otherDropdown => {
+                    if (otherDropdown !== dropdown) {
+                        otherDropdown.classList.remove('active');
+                    }
+                });
+                
+                // Toggle current dropdown
+                dropdown.classList.toggle('active');
+            }
+        });
+    });
+    
+    // Handle window resize
+    let resizeTimer;
+    window.addEventListener('resize', function() {
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(function() {
+            if (window.innerWidth > 768) {
+                // Reset mobile menu state on desktop
+                mobileMenuToggle.classList.remove('active');
+                navMenu.classList.remove('active');
+                document.body.classList.remove('menu-open');
+                
+                // Close all dropdowns
+                navDropdowns.forEach(dropdown => {
+                    dropdown.classList.remove('active');
+                });
+            }
+        }, 250);
+    });
+    
+    // Close menu when clicking on a link (optional, for better UX)
+    const navLinks = navMenu.querySelectorAll('a:not(.dropdown-toggle)');
+    navLinks.forEach(link => {
+        link.addEventListener('click', function() {
+            if (window.innerWidth <= 768) {
+                mobileMenuToggle.classList.remove('active');
+                navMenu.classList.remove('active');
+                document.body.classList.remove('menu-open');
+                
+                // Close all dropdowns
+                navDropdowns.forEach(dropdown => {
+                    dropdown.classList.remove('active');
+                });
+            }
+        });
+    });
+});
+
+// Add parallax effect to hero image
 if (document.querySelector('.hero-image')) {
     window.addEventListener('scroll', function() {
         const scrolled = window.pageYOffset;
@@ -410,3 +508,4 @@ if (document.querySelector('.hero-image')) {
 }
 
 console.log('Timeless website loaded successfully!');
+

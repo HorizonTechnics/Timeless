@@ -1,4 +1,4 @@
-// Explanation: Data for continents with detailed information
+// Data for continents with detailed information
 const continentData = {
     'North America': {
         population: '592 million',
