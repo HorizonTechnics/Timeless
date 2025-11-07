@@ -4,6 +4,7 @@
     padding: 2rem;
 }
 
+
 /* Timeline Navigation Buttons */
 .timeline-nav {
     display: flex;
@@ -134,7 +135,7 @@
     margin: 0.25rem;
 }
 
-/* Hyperspace Effect Overlay */
+/* Enhanced Hyperspace Effect Overlay - Star Wars Style */
 #hyperspace-overlay {
     position: fixed;
     top: 0;
@@ -143,32 +144,35 @@
     height: 100vh;
     pointer-events: none;
     z-index: 9999;
-    background: #000;
+    background: radial-gradient(ellipse at center, #000814 0%, #000000 100%);
 }
 
 #hyperspace-overlay.active {
     pointer-events: all;
 }
 
-/* Star Animation */
+/* Enhanced Star Wars-Style Star Animation */
 @keyframes hyperspace-star {
     0% {
         opacity: 0;
-        transform: translateY(0) scaleY(0);
+        transform: translate(0, 0) scale(0.1);
     }
-    10% {
+    5% {
         opacity: 1;
     }
-    90% {
-        opacity: 1;
+    95% {
+        opacity: 0.8;
     }
     100% {
         opacity: 0;
-        transform: translateY(100vh) scaleY(2);
+        transform: translate(
+            calc(var(--end-x) - var(--start-x)),
+            calc(var(--end-y) - var(--start-y))
+        ) scale(2);
     }
 }
 
-/* Jump Text */
+/* Jump Text with Enhanced Glow */
 .jump-text {
     position: fixed;
     top: 50%;
@@ -177,12 +181,17 @@
     font-size: 2.5rem;
     font-weight: bold;
     color: #00d4ff;
-    text-shadow: 0 0 30px #00d4ff, 0 0 60px #00d4ff;
+    text-shadow: 
+        0 0 20px #00d4ff,
+        0 0 40px #00d4ff,
+        0 0 60px #00d4ff,
+        0 0 80px #0099ff;
     z-index: 10000;
     opacity: 0;
     transition: opacity 0.3s ease;
     white-space: nowrap;
-    letter-spacing: 0.1em;
+    letter-spacing: 0.15em;
+    font-family: 'Arial Black', sans-serif;
 }
 
 .jump-text.active {
@@ -192,10 +201,20 @@
 
 @keyframes pulse-glow {
     0%, 100% {
-        text-shadow: 0 0 30px #00d4ff, 0 0 60px #00d4ff;
+        text-shadow: 
+            0 0 20px #00d4ff,
+            0 0 40px #00d4ff,
+            0 0 60px #00d4ff,
+            0 0 80px #0099ff;
+        transform: translate(-50%, -50%) scale(1);
     }
     50% {
-        text-shadow: 0 0 40px #00d4ff, 0 0 80px #00d4ff, 0 0 100px #0099ff;
+        text-shadow: 
+            0 0 30px #00d4ff,
+            0 0 60px #00d4ff,
+            0 0 90px #00d4ff,
+            0 0 120px #0099ff;
+        transform: translate(-50%, -50%) scale(1.05);
     }
 }
 
@@ -234,4 +253,4 @@
         font-size: 1.25rem;
     }
 }
-        
+
