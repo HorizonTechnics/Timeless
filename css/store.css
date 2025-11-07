@@ -64,6 +64,35 @@
             margin-bottom: 80px;
         }
 
+        /* Tablet */
+@media (max-width: 1024px) {
+    .plans-grid {
+        grid-template-columns: repeat(2, 1fr);
+        padding: 0 1rem;
+    }
+}
+
+/* Smartphone - Force single column */
+@media (max-width: 768px) {
+    .plans-grid {
+        grid-template-columns: 1fr;
+        gap: 24px;
+        padding: 0 1rem;
+    }
+    
+    .plan-card {
+        max-width: 100%;
+        width: 100%;
+    }
+}
+
+/* Small smartphones */
+@media (max-width: 480px) {
+    .plans-grid {
+        padding: 0 0.5rem;
+    }
+}
+
         .plan-card {
             background: rgba(255, 255, 255, 0.05);
             backdrop-filter: blur(10px);

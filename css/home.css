@@ -2,6 +2,7 @@
 .hero {
     position: relative;
     height: 80vh;
+    min-height: 500px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -23,6 +24,8 @@
     z-index: 10;
     text-align: center;
     padding: 2rem;
+    max-width: 90%;
+    width: 100%;
 }
 
 .hero-icon {
@@ -339,24 +342,40 @@
 @media (max-height: 600px) and (orientation: landscape) {
     .hero {
         height: 100vh;
+        min-height: 100vh;
     }
 
     .hero-content {
-        padding: 1rem;
+        padding: 0.5rem;
+    }
+
+    .hero-icon {
+        height: 1.5rem;
+        width: 1.5rem;
+        margin-bottom: 0.5rem;
     }
 
     .hero-title {
-        font-size: 2rem;
+        font-size: 1.5rem;
+        margin-bottom: 0.5rem;
     }
 
+    .hero-description {
+        font-size: 0.75rem;
+        margin-bottom: 0.75rem;
+    }
+    
     .hero-buttons {
         flex-direction: row;
         gap: 0.5rem;
+        flex-wrap: wrap;
     }
 
     .btn {
-        padding: 0.5rem 1rem;
-        font-size: 0.875rem;
+        padding: 0.5rem 0.75rem;
+        font-size: 0.75rem;
+        min-width: auto;
+        flex: 0 1 auto;
     }
 }
 
@@ -428,5 +447,164 @@
     .btn {
         padding: 0.625rem 1.25rem;
         font-size: 0.875rem;
+    }
+}
+
+/* Tablet responsiveness */
+@media (max-width: 1024px) {
+    .hero {
+        height: 70vh;
+        min-height: 450px;
+    }
+
+    .hero-content {
+        max-width: 85%;
+        padding: 1.5rem;
+    }
+
+    .hero-icon {
+        height: 3.5rem;
+        width: 3.5rem;
+    }
+
+    .hero-title {
+        font-size: 3rem;
+    }
+
+    .hero-description {
+        font-size: 1.125rem;
+    }
+
+    .hero-buttons {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.75rem;
+    }
+
+    .btn {
+        flex: 0 1 auto;
+        min-width: 180px;
+    }
+}
+
+/* Smartphone responsiveness */
+@media (max-width: 768px) {
+    .hero {
+        height: 70vh;
+        min-height: 400px;
+    }
+
+    .hero-video {
+        object-fit: cover;
+        height: 100%;
+    }
+
+    .hero-content {
+        max-width: 92%;
+        padding: 1rem;
+    }
+
+    .hero-icon {
+        height: 2.5rem;
+        width: 2.5rem;
+        margin-bottom: 1rem;
+    }
+
+    .hero-title {
+        font-size: 1.75rem;
+        margin-bottom: 1rem;
+    }
+
+    .hero-description {
+        font-size: 0.9rem;
+        padding: 0;
+        margin-bottom: 1.25rem;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        gap: 0.75rem;
+        width: 100%;
+    }
+
+    .btn {
+        width: 100%;
+        max-width: 280px;
+        padding: 0.65rem 1.25rem;
+        font-size: 0.875rem;
+    }
+
+    .btn svg {
+        width: 18px;
+        height: 18px;
+    }
+}
+
+/* Small smartphones */
+@media (max-width: 480px) {
+    .hero {
+        height: 65vh;
+        min-height: 350px;
+    }
+
+    .hero-icon {
+        height: 2rem;
+        width: 2rem;
+    }
+
+    .hero-title {
+        font-size: 1.5rem;
+    }
+
+    .hero-description {
+        font-size: 0.85rem;
+    }
+
+    .btn {
+        padding: 0.6rem 1rem;
+        font-size: 0.8rem;
+        max-width: 240px;
+    }
+}
+
+/* Landscape mode on mobile */
+@media (max-height: 600px) and (orientation: landscape) {
+    .hero {
+        height: 100vh;
+        min-height: 100vh;
+    }
+
+    .hero-content {
+        padding: 0.5rem;
+    }
+
+    .hero-icon {
+        height: 1.5rem;
+        width: 1.5rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .hero-title {
+        font-size: 1.5rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .hero-description {
+        font-size: 0.75rem;
+        margin-bottom: 0.75rem;
+    }
+
+    .hero-buttons {
+        flex-direction: row;
+        gap: 0.5rem;
+        flex-wrap: wrap;
+    }
+
+    .btn {
+        padding: 0.5rem 0.75rem;
+        font-size: 0.75rem;
+        min-width: auto;
+        flex: 0 1 auto;
     }
 }

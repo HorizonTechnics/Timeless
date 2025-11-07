@@ -26,35 +26,38 @@ document.addEventListener('DOMContentLoaded', function() {
     document.body.appendChild(jumpText);
 
     // === STAR GENERATION ===
-    function createStars() {
+     function createStars() {
         starContainer.innerHTML = '';
-        const starCount = window.innerWidth < 768 ? 100 : 200;
+        const starCount = window.innerWidth < 768 ? 150 : 250;
 
         for (let i = 0; i < starCount; i++) {
             const star = document.createElement('div');
             const x = Math.random() * 100;
             const y = Math.random() * 100;
-            const size = Math.random() * 2 + 1;
-            const duration = Math.random() * 1.2 + 0.6;
-            const delay = Math.random() * 0.3;
+            const size = Math.random() * 3 + 1;
+            const duration = Math.random() * 1.0 + 0.5;
+            const delay = Math.random() * 0.2;
 
             star.style.cssText = `
                 position: absolute;
                 left: ${x}%;
                 top: ${y}%;
                 width: ${size}px;
-                height: ${size * 30}px;
+                height: ${size * 40}px;
                 background: linear-gradient(
                     to bottom,
                     rgba(255, 255, 255, 0) 0%,
-                    rgba(255, 255, 255, 1) 40%,
-                    rgba(0, 212, 255, 0.8) 60%,
+                    rgba(255, 255, 255, 0.3) 20%,
+                    rgba(255, 255, 255, 1) 50%,
+                    rgba(255, 255, 255, 0.3) 80%,
                     rgba(255, 255, 255, 0) 100%
                 );
-                box-shadow: 0 0 10px rgba(0, 212, 255, 0.8);
+                box-shadow: 0 0 ${size * 3}px rgba(255, 255, 255, 0.8),
+                            0 0 ${size * 6}px rgba(255, 255, 255, 0.4);
                 opacity: 0;
                 transform-origin: top center;
                 animation: hyperspace-star ${duration}s ease-in ${delay}s forwards;
+                filter: blur(0.5px);
             `;
 
             starContainer.appendChild(star);
