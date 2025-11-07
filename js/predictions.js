@@ -381,3 +381,20 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 });
+
+// === Back to Top Button Functionality ===
+const backToTopBtn = document.getElementById('backToTop');
+
+// Show button when scrolling down
+window.addEventListener('scroll', () => {
+    if (window.scrollY > 400) {
+        backToTopBtn.style.display = 'flex';
+    } else {
+        backToTopBtn.style.display = 'none';
+    }
+});
+
+// Smooth scroll to top
+backToTopBtn.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+});

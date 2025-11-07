@@ -26,6 +26,9 @@
     padding: 2rem;
     max-width: 90%;
     width: 100%;
+    flex-direction: column;
+    align-items: center; /* Ensures perfect centering */
+    justify-content: center;
 }
 
 .hero-icon {
