@@ -72,6 +72,8 @@ body {
     align-items: center;
     justify-content: space-between;
     height: 4rem;
+    max-width: 100%;
+    padding: 0 2rem;
 }
 
 .logo {
@@ -105,6 +107,7 @@ body {
     display: flex;
     align-items: center;
     gap: 0.25rem;
+    margin-left: auto;
 }
 
 .nav-link {
@@ -190,60 +193,6 @@ body {
 .dropdown-content a:hover {
     background-color: rgba(157, 130, 255, 0.1);
     color: var(--accent);
-}
-
-/* Mobile Menu Toggle */
-.mobile-menu-toggle {
-    display: none;
-    flex-direction: column;
-    gap: 0.25rem;
-    background: none;
-    border: none;
-    cursor: pointer;
-    padding: 0.5rem;
-}
-
-.mobile-menu-toggle span {
-    width: 1.5rem;
-    height: 2px;
-    background-color: var(--foreground);
-    transition: all 0.3s ease;
-}
-
-/* Explanation: Responsive styles for tablets and mobile devices */
-@media (max-width: 768px) {
-    .nav-menu {
-        display: none;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        right: 0;
-        flex-direction: column;
-        background-color: var(--card);
-        padding: 1rem;
-        gap: 0.5rem;
-    }
-
-    .nav-menu.active {
-        display: flex;
-    }
-
-    .mobile-menu-toggle {
-        display: flex;
-    }
-
-    .dropdown-content {
-        position: static;
-        opacity: 1;
-        visibility: visible;
-        transform: none;
-        margin-top: 0.5rem;
-        grid-template-columns: 1fr;
-    }
-
-    .nav-dropdown:hover .chevron {
-        transform: rotate(0);
-    }
 }
 
 /* Page Header */
@@ -513,7 +462,7 @@ body {
     color: var(--primary);
 }
 
-/* Explanation: Language switcher styles for multilingual support */
+/* Language switcher styles for multilingual support */
 .language-switcher {
     display: flex;
     gap: 0.5rem;
@@ -545,7 +494,7 @@ body {
     border-color: var(--primary);
 }
 
-/* Explanation: Responsive language switcher for mobile devices */
+/* Responsive language switcher for mobile devices */
 @media (max-width: 640px) {
     .footer-links {
         flex-direction: column;
@@ -585,7 +534,7 @@ body {
     }
 }
 
-/* Explanation: Responsive breakpoints for different screen sizes */
+/*  Responsive breakpoints for different screen sizes */
 @media (max-width: 768px) {
     .page-header h1 {
         font-size: 2.5rem;
@@ -613,8 +562,35 @@ body {
     .page-header h1 {
         font-size: 3rem;
     }
+
+    .nav-container {
+        padding: 0 1.5rem;
+    }
 }
 
+/* Wide screen optimization */
+@media (min-width: 1440px) {
+    .container {
+        max-width: 1600px;
+    }
+    
+    .nav-container {
+        max-width: 1600px;
+        margin: 0 auto;
+    }
+}
+
+/* Ultrawide screen optimization */
+@media (min-width: 1920px) {
+    .container {
+        max-width: 1800px;
+    }
+    
+    .nav-container {
+        max-width: 1800px;
+        margin: 0 auto;
+    }
+}
 
 /* Your existing main.css content */
 .footer-links a:hover {
@@ -623,14 +599,7 @@ body {
 
 /* ============================================
    RESPONSIVE NAVIGATION STYLES
-   Add this to your main.css file
    ============================================ */
-
-/* Mobile menu toggle button - initially hidden */
-.mobile-menu-toggle {
-    display: none;
-    flex-direction: column;
-}
 
 /* Mobile menu toggle button - initially hidden */
 .mobile-menu-toggle {
@@ -644,6 +613,7 @@ body {
     cursor: pointer;
     padding: 0;
     z-index: 1001;
+    margin-left: auto;
 }
 
 .mobile-menu-toggle span {
@@ -768,9 +738,12 @@ body {
         transform: rotate(180deg);
     }
 
-    /* Prevent body scroll when menu is open */
+    /* Prevent body scroll when menu is open but allow menu scroll */
     body.menu-open {
         overflow: hidden;
+        position: fixed;
+        width: 100%;
+        height: 100%;
     }
 
     /* Overlay for mobile menu */
