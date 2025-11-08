@@ -15,8 +15,8 @@
     left: 0;
     width: 100%;
     height: 100%;
-    object-fit: cover; /* belangrijk voor video cover effect */
-    z-index: 1; /* onder je content */
+    object-fit: cover;
+    z-index: 1;
 }
 
 .hero-content {
@@ -26,8 +26,9 @@
     padding: 2rem;
     max-width: 90%;
     width: 100%;
+    display: flex;
     flex-direction: column;
-    align-items: center; /* Ensures perfect centering */
+    align-items: center;
     justify-content: center;
 }
 
@@ -58,26 +59,28 @@
     margin-left: auto;
     margin-right: auto;
     animation: fadeIn 1s ease 0.2s backwards;
-
-    /* gradient text */
     background: linear-gradient(to right, var(--primary), var(--accent), var(--primary));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
 }
 
-
+/* FIXED: Hero buttons centering */
 .hero-buttons {
     display: flex;
     flex-direction: column;
     gap: 1rem;
+    align-items: center;
     justify-content: center;
+    width: 100%;
+    max-width: 400px;
     animation: fadeIn 1.2s ease 0.4s backwards;
 }
 
 @media (min-width: 640px) {
     .hero-buttons {
         flex-direction: row;
+        max-width: none;
     }
 }
 
@@ -92,6 +95,15 @@
     border-radius: var(--radius);
     text-decoration: none;
     transition: all 0.3s ease;
+    width: 100%;
+    max-width: 280px;
+}
+
+@media (min-width: 640px) {
+    .btn {
+        width: auto;
+        max-width: none;
+    }
 }
 
 .btn svg {
@@ -118,8 +130,6 @@
     border: 2px solid var(--primary);
     color: var(--primary-foreground);
     background: transparent;
-
-    /* gradient text */
     background: linear-gradient(to right, var(--primary), var(--accent), var(--primary));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -248,12 +258,54 @@
 
 /* Responsive */
 @media (max-width: 768px) {
-    .hero-title {
-        font-size: 2.5rem;
+    .hero {
+        height: 70vh;
+        min-height: 500px;
     }
-    
+
+    .hero-video {
+        height: 100%;
+    }
+
+    .hero-content {
+        max-width: 92%;
+        padding: 1rem;
+    }
+
+    .hero-icon {
+        height: 2.5rem;
+        width: 2.5rem;
+        margin-bottom: 1rem;
+    }
+
+    .hero-title {
+        font-size: 1.75rem;
+        margin-bottom: 1rem;
+    }
+
     .hero-description {
-        font-size: 1.125rem;
+        font-size: 0.9rem;
+        padding: 0;
+        margin-bottom: 1.25rem;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        gap: 0.75rem;
+        width: 100%;
+        max-width: 280px;
+    }
+
+    .btn {
+        width: 100%;
+        max-width: 280px;
+        padding: 0.65rem 1.25rem;
+        font-size: 0.875rem;
+    }
+
+    .btn svg {
+        width: 18px;
+        height: 18px;
     }
     
     .timeline-grid {
@@ -265,79 +317,63 @@
     }
 }
 
-/* Hero Section Responsiveness */
-@media (max-width: 1024px) {
+@media (max-width: 480px) {
+    .hero {
+        height: 65vh;
+        min-height: 350px;
+    }
+
+    .hero-icon {
+        height: 2rem;
+        width: 2rem;
+    }
+
+    .hero-title {
+        font-size: 1.5rem;
+    }
+
+    .hero-description {
+        font-size: 0.85rem;
+    }
+
+    .btn {
+        padding: 0.6rem 1rem;
+        font-size: 0.8rem;
+        max-width: 240px;
+    }
+}
+
+/* Tablet optimization */
+@media (min-width: 769px) and (max-width: 1024px) {
     .hero {
         height: 70vh;
     }
 
-    .hero-title {
-        font-size: 3.5rem;
-    }
-
-    .hero-description {
-        font-size: 1.25rem;
-    }
-
-    .hero-buttons {
-        flex-direction: column;
-        gap: 1rem;
-        width: 100%;
-        max-width: 400px;
-        margin: 0 auto;
-    }
-
-    .btn {
-        width: 100%;
-    }
-}
-
-@media (max-width: 768px) {
-    .hero {
-        height: 60vh;
-        min-height: 500px;
-    }
-
-    .hero-video {
-        height: 60vh;
-    }
-
-    .hero-icon {
-        width: 3rem;
-        height: 3rem;
+    .hero-content {
+        max-width: 85%;
     }
 
     .hero-title {
-        font-size: 2.5rem;
+        font-size: 3rem;
     }
 
     .hero-description {
         font-size: 1.125rem;
-        padding: 0 1rem;
+    }
+
+    .hero-buttons {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
     }
 
     .btn {
-        padding: 0.75rem 1.5rem;
-        font-size: 0.95rem;
+        flex: 0 1 auto;
+        min-width: 180px;
     }
-}
-
-@media (max-width: 480px) {
-    .hero {
-        height: 70vh;
-    }
-
-    .hero-title {
-        font-size: 2rem;
-    }
-
-    .hero-description {
-        font-size: 1rem;
-    }
-
-    .btn svg {
-        width: 16px;
-        height: 16px;
+    
+    .timeline-grid {
+        grid-template-columns: repeat(2, 1fr);
     }
 }
 
@@ -372,6 +408,7 @@
         flex-direction: row;
         gap: 0.5rem;
         flex-wrap: wrap;
+        max-width: none;
     }
 
     .btn {
@@ -379,235 +416,6 @@
         font-size: 0.75rem;
         min-width: auto;
         flex: 0 1 auto;
-    }
-}
-
-/* Better video overlay centering */
-.hero {
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.hero-content {
-    position: relative;
-    z-index: 10;
-    max-width: 90%;
-    width: 100%;
-}
-
-/* Tablet specific fixes */
-@media (min-width: 769px) and (max-width: 1024px) {
-    .hero-content {
-        max-width: 85%;
-    }
-
-    .hero-title {
-        font-size: 3rem;
-    }
-
-    .hero-description {
-        font-size: 1.125rem;
-    }
-
-    .hero-buttons {
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-
-    .btn {
-        flex: 0 1 auto;
-        min-width: 200px;
-    }
-}
-
-/* Small tablet */
-@media (min-width: 600px) and (max-width: 768px) {
-    .hero-content {
-        max-width: 90%;
-    }
-
-    .hero-icon {
-        width: 3rem;
-        height: 3rem;
-    }
-
-    .hero-title {
-        font-size: 2.25rem;
-    }
-
-    .hero-description {
-        font-size: 1rem;
-        padding: 0 0.5rem;
-    }
-
-    .hero-buttons {
-        gap: 0.75rem;
-    }
-
-    .btn {
-        padding: 0.625rem 1.25rem;
-        font-size: 0.875rem;
-    }
-}
-
-/* Tablet responsiveness */
-@media (max-width: 1024px) {
-    .hero {
-        height: 70vh;
-        min-height: 450px;
-    }
-
-    .hero-content {
-        max-width: 85%;
-        padding: 1.5rem;
-    }
-
-    .hero-icon {
-        height: 3.5rem;
-        width: 3.5rem;
-    }
-
-    .hero-title {
-        font-size: 3rem;
-    }
-
-    .hero-description {
-        font-size: 1.125rem;
-    }
-
-    .hero-buttons {
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 0.75rem;
-    }
-
-    .btn {
-        flex: 0 1 auto;
-        min-width: 180px;
-    }
-}
-
-/* Smartphone responsiveness */
-@media (max-width: 768px) {
-    .hero {
-        height: 70vh;
-        min-height: 400px;
-    }
-
-    .hero-video {
-        object-fit: cover;
-        height: 100%;
-    }
-
-    .hero-content {
-        max-width: 92%;
-        padding: 1rem;
-    }
-
-    .hero-icon {
-        height: 2.5rem;
-        width: 2.5rem;
-        margin-bottom: 1rem;
-    }
-
-    .hero-title {
-        font-size: 1.75rem;
-        margin-bottom: 1rem;
-    }
-
-    .hero-description {
-        font-size: 0.9rem;
-        padding: 0;
-        margin-bottom: 1.25rem;
-    }
-
-    .hero-buttons {
-        flex-direction: column;
-        gap: 0.75rem;
-        width: 100%;
-    }
-
-    .btn {
-        width: 100%;
-        max-width: 280px;
-        padding: 0.65rem 1.25rem;
-        font-size: 0.875rem;
-    }
-
-    .btn svg {
-        width: 18px;
-        height: 18px;
-    }
-}
-
-/* Small smartphones */
-@media (max-width: 480px) {
-    .hero {
-        height: 65vh;
-        min-height: 350px;
-    }
-
-    .hero-icon {
-        height: 2rem;
-        width: 2rem;
-    }
-
-    .hero-title {
-        font-size: 1.5rem;
-    }
-
-    .hero-description {
-        font-size: 0.85rem;
-    }
-
-    .btn {
-        padding: 0.6rem 1rem;
-        font-size: 0.8rem;
-        max-width: 240px;
-    }
-}
-
-/* Landscape mode on mobile */
-@media (max-height: 600px) and (orientation: landscape) {
-    .hero {
-        height: 100vh;
-        min-height: 100vh;
-    }
-
-    .hero-content {
-        padding: 0.5rem;
-    }
-
-    .hero-icon {
-        height: 1.5rem;
-        width: 1.5rem;
-        margin-bottom: 0.5rem;
-    }
-
-    .hero-title {
-        font-size: 1.5rem;
-        margin-bottom: 0.5rem;
-    }
-
-    .hero-description {
-        font-size: 0.75rem;
-        margin-bottom: 0.75rem;
-    }
-
-    .hero-buttons {
-        flex-direction: row;
-        gap: 0.5rem;
-        flex-wrap: wrap;
-    }
-
-    .btn {
-        padding: 0.5rem 0.75rem;
-        font-size: 0.75rem;
-        min-width: auto;
-        flex: 0 1 auto;
+        max-width: none;
     }
 }

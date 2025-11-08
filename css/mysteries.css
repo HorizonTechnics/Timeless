@@ -1,0 +1,385 @@
+/* Mysteries Page - Dark Mystical Theme */
+
+/* Filter Section */
+.filter-section {
+    padding: 2rem 0;
+    background: rgba(46, 56, 77, 0.3);
+    border-bottom: 1px solid var(--border);
+}
+
+.filter-tabs {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.filter-tab {
+    padding: 0.75rem 1.5rem;
+    background: transparent;
+    border: 2px solid var(--primary);
+    color: var(--primary);
+    border-radius: var(--radius);
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 0.9rem;
+}
+
+.filter-tab:hover {
+    background: rgba(83, 155, 245, 0.1);
+    transform: translateY(-2px);
+}
+
+.filter-tab.active {
+    background: var(--primary);
+    color: var(--primary-foreground);
+    box-shadow: 0 0 20px rgba(83, 155, 245, 0.4);
+}
+
+/* Mysteries Section */
+.mysteries-section {
+    padding: 4rem 0;
+    background: linear-gradient(
+        to bottom,
+        var(--background),
+        rgba(46, 56, 77, 0.2),
+        var(--background)
+    );
+}
+
+.mysteries-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 2rem;
+}
+
+/* Mystery Cards */
+.mystery-card {
+    background: var(--card);
+    border-radius: var(--radius);
+    padding: 2rem;
+    border-left: 4px solid var(--primary);
+    transition: all 0.4s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.mystery-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(
+        circle at top right,
+        rgba(83, 155, 245, 0.05),
+        transparent 70%
+    );
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.mystery-card:hover::before {
+    opacity: 1;
+}
+
+.mystery-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(83, 155, 245, 0.3);
+    border-left-color: var(--accent);
+}
+
+/* Egyptian theme accent */
+.mystery-card.egyptian {
+    border-left-color: hsl(45, 100%, 51%);
+}
+
+.mystery-card.egyptian:hover {
+    box-shadow: 0 20px 40px rgba(255, 215, 0, 0.2);
+}
+
+/* Greek theme accent */
+.mystery-card.greek {
+    border-left-color: hsl(217, 91%, 60%);
+}
+
+.mystery-card.greek:hover {
+    box-shadow: 0 20px 40px rgba(83, 155, 245, 0.3);
+}
+
+/* Lineage Trail */
+.lineage-trail {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+    padding: 0.75rem;
+    background: rgba(157, 130, 255, 0.05);
+    border-radius: 0.5rem;
+    flex-wrap: wrap;
+    font-size: 0.85rem;
+}
+
+.lineage-node {
+    padding: 0.25rem 0.75rem;
+    background: rgba(83, 155, 245, 0.2);
+    border-radius: 1rem;
+    color: var(--primary);
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.lineage-arrow {
+    color: var(--accent);
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.mystery-card.egyptian .lineage-node {
+    background: rgba(255, 215, 0, 0.2);
+    color: hsl(45, 100%, 51%);
+}
+
+.mystery-card.egyptian .lineage-arrow {
+    color: hsl(45, 100%, 51%);
+}
+
+/* Character Icon */
+.character-icon {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+    text-align: center;
+    filter: drop-shadow(0 4px 8px rgba(83, 155, 245, 0.3));
+    animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+.mystery-card h3 {
+    font-size: 1.75rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    background: linear-gradient(to right, var(--primary), var(--accent));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.mystery-card.egyptian h3 {
+    background: linear-gradient(to right, hsl(45, 100%, 51%), hsl(30, 100%, 50%));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.origin-type {
+    color: var(--muted-foreground);
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 1rem;
+    opacity: 0.8;
+}
+
+.short-desc {
+    color: var(--muted-foreground);
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+    font-style: italic;
+}
+
+/* Reveal Button */
+.reveal-btn {
+    padding: 0.75rem 1.5rem;
+    background: linear-gradient(135deg, var(--primary), var(--accent));
+    color: var(--primary-foreground);
+    border: none;
+    border-radius: var(--radius);
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 100%;
+    font-size: 0.95rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.reveal-btn::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.2);
+    transform: translate(-50%, -50%);
+    transition: width 0.6s, height 0.6s;
+}
+
+.reveal-btn:hover::before {
+    width: 300px;
+    height: 300px;
+}
+
+.reveal-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(83, 155, 245, 0.4);
+}
+
+.mystery-card.egyptian .reveal-btn {
+    background: linear-gradient(135deg, hsl(45, 100%, 51%), hsl(30, 100%, 50%));
+}
+
+/* Full Story */
+.full-story {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.6s ease, opacity 0.6s ease, margin-top 0.6s ease;
+    opacity: 0;
+    margin-top: 0;
+}
+
+.full-story.revealed {
+    max-height: 3000px;
+    opacity: 1;
+    margin-top: 1.5rem;
+}
+
+.story-divider {
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(to right, var(--primary), var(--accent));
+    margin: 1.5rem auto;
+    border-radius: 2px;
+}
+
+.mystery-card.egyptian .story-divider {
+    background: linear-gradient(to right, hsl(45, 100%, 51%), hsl(30, 100%, 50%));
+}
+
+.full-story p {
+    color: var(--foreground);
+    line-height: 1.8;
+    margin-bottom: 1.25rem;
+    text-align: justify;
+}
+
+.full-story p:last-child {
+    margin-bottom: 0;
+}
+
+/* Filtering Animation */
+.mystery-card.hidden {
+    display: none;
+}
+
+.mystery-card {
+    animation: fadeInCard 0.6s ease;
+}
+
+@keyframes fadeInCard {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .mysteries-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .mystery-card {
+        padding: 1.5rem;
+    }
+
+    .character-icon {
+        font-size: 2.5rem;
+    }
+
+    .mystery-card h3 {
+        font-size: 1.5rem;
+    }
+
+    .filter-tabs {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .filter-tab {
+        width: 100%;
+        text-align: center;
+    }
+
+    .lineage-trail {
+        font-size: 0.75rem;
+    }
+
+    .lineage-node {
+        padding: 0.2rem 0.6rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .mysteries-section {
+        padding: 2rem 0;
+    }
+
+    .mystery-card {
+        padding: 1.25rem;
+    }
+
+    .character-icon {
+        font-size: 2rem;
+    }
+
+    .mystery-card h3 {
+        font-size: 1.35rem;
+    }
+
+    .reveal-btn {
+        padding: 0.65rem 1.25rem;
+        font-size: 0.85rem;
+    }
+}
+
+/* Tablet specific */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .mysteries-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Print styles for story preservation */
+@media print {
+    .filter-section,
+    .reveal-btn,
+    .navbar,
+    .footer {
+        display: none;
+    }
+
+    .full-story {
+        max-height: none;
+        opacity: 1;
+        display: block;
+    }
+
+    .mystery-card {
+        page-break-inside: avoid;
+        border: 2px solid #000;
+    }
+}
