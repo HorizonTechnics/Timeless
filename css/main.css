@@ -51,7 +51,7 @@ html {
     padding: 0 2rem;
 }
 
-/* Explanation: Animated clock icon with rotating hour and minute hands */
+/* Animated clock icon with rotating hour and minute hands */
 @keyframes rotate-hour {
     from { transform: rotate(0deg); }
     to { transform: rotate(360deg); }

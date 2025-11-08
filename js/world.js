@@ -1,4 +1,4 @@
-// Explanation: Planet data with complete statistics and descriptions
+// Planet data with complete statistics and descriptions
 const planetsData = [
     {
         name: "Sun", size: 8, color: 0xfdb813, emissive: 0xff6600,
@@ -145,7 +145,7 @@ const planetsData = [
     }
 ];
 
-// Explanation: Global variables for Three.js scene and interaction
+// Global variables for Three.js scene and interaction
 let scene, camera, renderer, raycaster, mouse;
 let planetObjects = [];
 let isRotating = true;
@@ -155,10 +155,10 @@ let selectedPlanet = null;
 let previousMousePosition = {x: 0, y: 0};
 let cameraAngle = {horizontal: 0, vertical: 0.5};
 let cameraDistance = 20;
-// Explanation: Speed multiplier for orbital rotation (1x, 2x, 4x, 6x)
+// Speed multiplier for orbital rotation (1x, 2x, 4x, 6x)
 let speedMultiplier = 1;
 
-// Explanation: Initialize Three.js scene and setup
+// Initialize Three.js scene and setup
 function init() {
     scene = new THREE.Scene();
     
@@ -180,7 +180,7 @@ function init() {
     createSolarSystem();
     createPlanetButtons();
 
-    // Explanation: Event listeners for user interaction
+    // Event listeners for user interaction
     renderer.domElement.addEventListener('mousedown', onMouseDown);
     renderer.domElement.addEventListener('mousemove', onMouseMove);
     renderer.domElement.addEventListener('mouseup', onMouseUp);
@@ -192,7 +192,7 @@ function init() {
     animate();
 }
 
-// Explanation: Create starfield background
+// Create starfield background
 function createStars() {
     const geometry = new THREE.BufferGeometry();
     const vertices = [];
@@ -220,7 +220,7 @@ function createStars() {
     scene.add(stars);
 }
 
-// Explanation: Create realistic lighting from the Sun
+// Create realistic lighting from the Sun
 function createLights() {
     // Dim ambient light for space atmosphere
     const ambient = new THREE.AmbientLight(0x111111, 0.3);
@@ -237,7 +237,7 @@ function createLights() {
     scene.add(sunLight);
 }
 
-// Explanation: Create all planets, moons, and orbital paths
+// Create all planets, moons, and orbital paths
 function createSolarSystem() {
     planetsData.forEach((planetData) => {
         // Create orbit ring for planets (not for Sun)
@@ -403,7 +403,7 @@ function createSolarSystem() {
     });
 }
 
-// Explanation: Apply procedural textures to planets for realistic appearance
+// Apply procedural textures to planets for realistic appearance
 function applyPlanetTexture(geometry, material, planetName) {
     const pos = geometry.attributes.position;
     const colors = [];
@@ -508,7 +508,7 @@ function applyPlanetTexture(geometry, material, planetName) {
     material.vertexColors = true;
 }
 
-// Explanation: Create clickable planet buttons in the selector
+// Create clickable planet buttons in the selector
 function createPlanetButtons() {
     const container = document.getElementById('planetButtons');
     planetsData.forEach(planet => {
@@ -530,7 +530,7 @@ function createPlanetButtons() {
     });
 }
 
-// Explanation: Select a planet and follow it with the camera
+// Select a planet and follow it with the camera
 function selectPlanet(planet) {
     selectedPlanet = planet;
     cameraAngle = {horizontal: 0, vertical: 0.5};
@@ -540,7 +540,7 @@ function selectPlanet(planet) {
     updatePlanetButtons();
 }
 
-// Explanation: Deselect planet and return to free camera
+// Deselect planet and return to free camera
 function deselectPlanet() {
     selectedPlanet = null;
     cameraAngle = {horizontal: 0, vertical: 0.5};
@@ -549,7 +549,7 @@ function deselectPlanet() {
     updatePlanetButtons();
 }
 
-// Explanation: Update planet details panel with stats (only show existing stats)
+// Update planet details panel with stats (only show existing stats)
 function updatePlanetDetails() {
     if (!selectedPlanet) return;
     
@@ -570,7 +570,7 @@ function updatePlanetDetails() {
     panel.classList.add('active');
 }
 
-// Explanation: Update selected state of planet buttons
+// Update selected state of planet buttons
 function updatePlanetButtons() {
     const buttons = document.querySelectorAll('.planet-btn');
     buttons.forEach((btn, index) => {
@@ -582,7 +582,7 @@ function updatePlanetButtons() {
     });
 }
 
-// Explanation: Main animation loop with speed multiplier applied
+// Main animation loop with speed multiplier applied
 function animate() {
     requestAnimationFrame(animate);
 
@@ -623,7 +623,7 @@ function animate() {
     renderer.render(scene, camera);
 }
 
-// Explanation: Mouse event handlers for interaction
+// Mouse event handlers for interaction
 function onMouseDown(e) {
     isDragging = true;
     previousMousePosition = {x: e.clientX, y: e.clientY};
@@ -654,7 +654,7 @@ function onMouseUp() {
     isDragging = false;
 }
 
-// Explanation: Click handler for planet selection
+// Click handler for planet selection
 function onClick(e) {
     if (Math.abs(e.clientX - previousMousePosition.x) > 5 || 
         Math.abs(e.clientY - previousMousePosition.y) > 5) {
@@ -679,7 +679,7 @@ function onClick(e) {
     }
 }
 
-// Explanation: Zoom in/out with mouse wheel
+// Zoom in/out with mouse wheel
 function onWheel(e) {
     if(selectedPlanet) {
         cameraDistance += e.deltaY * 0.05;
@@ -690,14 +690,14 @@ function onWheel(e) {
     }
 }
 
-// Explanation: Handle window resize
+// Handle window resize
 function onResize() {
     camera.aspect = window.innerWidth / window.innerHeight;
     camera.updateProjectionMatrix();
     renderer.setSize(window.innerWidth, window.innerHeight);
 }
 
-// Explanation: Control functions called from HTML buttons
+// Control functions called from HTML buttons
 function toggleRotation() {
     isRotating = !isRotating;
     const btn = document.getElementById('playBtn');
@@ -720,7 +720,7 @@ function toggleOrbits() {
     });
 }
 
-// Explanation: Cycle through speed multipliers (1x, 2x, 4x, 6x)
+// Cycle through speed multipliers (1x, 2x, 4x, 6x)
 function cycleSpeed() {
     const speeds = [1, 2, 4, 6];
     const currentIndex = speeds.indexOf(speedMultiplier);
@@ -737,6 +737,6 @@ function cycleSpeed() {
 
 
 
-// Explanation: Start the application
+// Start the application
 init();
 

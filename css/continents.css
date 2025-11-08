@@ -1,4 +1,4 @@
-/* Explanation: Styles for continents 3D Earth page */
+/* Styles for continents 3D Earth page */
 
 body {
     margin: 0;
@@ -14,7 +14,7 @@ body {
     left: 0;
 }
 
-/* Explanation: Info panel styling */
+/* Info panel styling */
 .info-panel {
     position: absolute;
     top: 80px;
@@ -55,7 +55,7 @@ body {
     margin: 5px 0;
 }
 
-/* Explanation: Continent panel styling */
+/* Continent panel styling */
 .continent-panel {
     position: absolute;
     top: 80px;
@@ -117,7 +117,7 @@ body {
     color: #00d4ff;
 }
 
-/* Explanation: Info grid layout */
+/* Info grid layout */
 .info-grid {
     display: grid;
     gap: 15px;
@@ -156,7 +156,7 @@ body {
     font-size: 14px;
 }
 
-/* Explanation: Country hover panel */
+/* Country hover panel */
 .country-panel {
     position: absolute;
     bottom: 20px;
@@ -198,7 +198,7 @@ body {
     font-style: italic;
 }
 
-/* Explanation: Responsive adjustments */
+/* Responsive adjustments */
 @media (max-width: 768px) {
     .info-panel,
     .continent-panel {
@@ -213,7 +213,7 @@ body {
     }
 }
 
-/* Explanation: Custom scrollbar for continent panel */
+/* Custom scrollbar for continent panel */
 .continent-panel::-webkit-scrollbar {
     width: 8px;
 }

@@ -13,7 +13,7 @@
     <nav class="navbar">
         <div class="container nav-container">
             <a href="index.html" class="logo">
-                <!-- Explanation: Animated clock icon with rotating hands -->
+                <!-- Animated clock icon with rotating hands -->
                 <svg class="clock-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                     <circle cx="12" cy="12" r="10"></circle>
                     <line class="clock-hour-hand" x1="12" y1="12" x2="12" y2="8"></line>
@@ -53,10 +53,8 @@
                     </a>
                     
                     <div class="dropdown-content">
-                        <!-- Explanation:  -->
                         <a href="artifacts.html" data-translate="artifactsTime">Artifacts Through Time</a>
                         <a href="mythology.html" data-translate="mythical">Mythical Stories</a>
-                        <!-- Explanation:  -->
                         <a href="wonders.html" data-translate="worldWonders">World Wonders</a>
                         <a href="conspiracy.html" data-translate="conspiracy">Conspiracy Theories</a>
                         <a href="technology.html" data-translate="technology">Technology</a>
@@ -115,16 +113,16 @@
         </div>
     </nav>
 
-    <!-- Explanation: 3D Solar System Canvas Container -->
+    <!-- 3D Solar System Canvas Container -->
     <div id="canvas-container"></div>
 
-    <!-- Explanation: Info panel with instructions (hides when planet selected) -->
+    <!-- Info panel with instructions (hides when planet selected) -->
     <div class="info-panel" id="infoPanel">
         <h2>Solar System</h2>
         <p>Click on a planet to follow it and view details. Use mouse to rotate and scroll to zoom.</p>
     </div>
 
-    <!-- Explanation: Planet details panel (shows when planet selected) -->
+    <!-- Planet details panel (shows when planet selected) -->
     <div class="planet-details" id="planetDetails">
         <div class="planet-header">
             <div class="planet-color" id="detailColor"></div>
@@ -134,17 +132,17 @@
         <div class="planet-stats" id="detailStats"></div>
     </div>
 
-    <!-- Explanation: Planet selector buttons at bottom -->
+    <!-- Planet selector buttons at bottom -->
     <div class="planet-selector">
         <div class="planet-buttons" id="planetButtons"></div>
     </div>
 
-    <!-- Explanation: Control buttons including new speed control -->
+    <!-- Control buttons including new speed control -->
     <div class="controls">
         <button class="control-btn active" id="playBtn" onclick="toggleRotation()">Pause</button>
         <button class="control-btn" onclick="resetView()">Reset View</button>
         <button class="control-btn" onclick="toggleOrbits()">Toggle Orbits</button>
-        <!-- Explanation: Speed control cycles through 1x, 2x, 4x, 6x -->
+        <!-- Speed control cycles through 1x, 2x, 4x, 6x -->
         <button class="control-btn" id="speedBtn" onclick="cycleSpeed()">Speed: 1x</button>
     </div>
 

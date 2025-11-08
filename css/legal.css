@@ -1,4 +1,4 @@
-/* Explanation: Styles for legal and about pages */
+/* Styles for legal and about pages */
 
 .legal-container {
     max-width: 900px;
@@ -70,7 +70,7 @@
     text-decoration: underline;
 }
 
-/* Explanation: Values grid for about page */
+/* Values grid for about page */
 .values-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -101,7 +101,7 @@
     font-size: 0.875rem;
 }
 
-/* Explanation: Contact info styling */
+/* Contact info styling */
 .contact-info {
     background: rgba(46, 56, 77, 0.5);
     padding: 2rem;
@@ -119,7 +119,7 @@
     margin-bottom: 0.5rem;
 }
 
-/* Explanation: Responsive adjustments for tablets */
+/* Responsive adjustments for tablets */
 @media (max-width: 768px) {
     .legal-container {
         padding: 2rem 1rem;
@@ -147,7 +147,7 @@
     }
 }
 
-/* Explanation: Print styles */
+/* Print styles */
 @media print {
     .navbar,
     .footer {

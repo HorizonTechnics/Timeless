@@ -1,4 +1,4 @@
-/* Explanation: Styles for individual topic pages (wonders, artifacts, etc.) */
+/* Styles for individual topic pages (wonders, artifacts, etc.) */
 
 .topic-hero {
     padding: 6rem 0 4rem;
@@ -28,7 +28,7 @@
     margin: 0 auto;
 }
 
-/* Explanation: Back link navigation */
+/* Back link navigation */
 .back-link {
     display: inline-flex;
     align-items: center;
@@ -47,7 +47,7 @@
     text-decoration: underline;
 }
 
-/* Explanation: Topic content layout */
+/* Topic content layout */
 .topic-content {
     padding: 4rem 0;
 }
@@ -58,14 +58,14 @@
     gap: 3rem;
 }
 
-/* Explanation: Two-column layout for larger screens */
+/* Two-column layout for larger screens */
 @media (min-width: 1024px) {
     .content-grid {
         grid-template-columns: 2fr 1fr;
     }
 }
 
-/* Explanation: Main content area styling */
+/* Main content area styling */
 .main-content h2 {
     font-size: 2rem;
     margin-bottom: 1rem;
@@ -84,7 +84,7 @@
     line-height: 1.8;
 }
 
-/* Explanation: Image cards with captions */
+/* Image cards with captions */
 .image-card {
     margin: 2rem 0;
     border-radius: 1rem;
@@ -107,7 +107,7 @@
     font-style: italic;
 }
 
-/* Explanation: Sticky sidebar with facts */
+/* Sticky sidebar with facts */
 .sidebar {
     background: rgba(46, 56, 77, 0.3);
     padding: 2rem;
@@ -145,7 +145,7 @@
     color: hsl(215, 20%, 75%);
 }
 
-/* Explanation: News section with card grid */
+/* News section with card grid */
 .news-section {
     margin-top: 4rem;
     padding-top: 3rem;
@@ -197,7 +197,7 @@
     line-height: 1.6;
 }
 
-/* Explanation: Responsive adjustments for tablets */
+/* Responsive adjustments for tablets */
 @media (max-width: 1024px) {
     .content-grid {
         grid-template-columns: 1fr;
@@ -212,7 +212,7 @@
     }
 }
 
-/* Explanation: Responsive adjustments for mobile */
+/* Responsive adjustments for mobile */
 @media (max-width: 768px) {
     .topic-hero {
         padding: 4rem 0 2rem;
@@ -243,7 +243,7 @@
     }
 }
 
-/* Explanation: Print styles for topic pages */
+/* Print styles for topic pages */
 @media print {
     .navbar,
     .footer,

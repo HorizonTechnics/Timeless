@@ -51,7 +51,7 @@ const continentData = {
     }
 };
 
-// Explanation: Sample country data (expand this with more countries)
+// Sample country data (expand this with more countries)
 const countryData = {
     'United States': {
         population: '331 million',
@@ -121,7 +121,7 @@ let isDragging = false;
 let previousMousePosition = { x: 0, y: 0 };
 let selectedContinent = null;
 
-// Explanation: Initialize Three.js scene
+// Initialize Three.js scene
 function init() {
     scene = new THREE.Scene();
     camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 0.1, 1000);
@@ -134,7 +134,7 @@ function init() {
     raycaster = new THREE.Raycaster();
     mouse = new THREE.Vector2();
 
-    // Explanation: Create Earth sphere with realistic texture
+    // Create Earth sphere with realistic texture
     const geometry = new THREE.SphereGeometry(1, 64, 64);
     const textureLoader = new THREE.TextureLoader();
     
@@ -152,7 +152,7 @@ function init() {
     // Add realistic Earth texture with continents
     applyEarthTexture(geometry, material);
 
-    // Explanation: Add atmospheric glow
+    // Add atmospheric glow
     const atmosGeometry = new THREE.SphereGeometry(1.05, 32, 32);
     const atmosMaterial = new THREE.MeshBasicMaterial({
         color: 0x4488ff,
@@ -163,7 +163,7 @@ function init() {
     const atmosphere = new THREE.Mesh(atmosGeometry, atmosMaterial);
     earth.add(atmosphere);
 
-    // Explanation: Add lighting
+    // Add lighting
     const ambientLight = new THREE.AmbientLight(0x404040, 0.5);
     scene.add(ambientLight);
 
@@ -171,7 +171,7 @@ function init() {
     directionalLight.position.set(5, 3, 5);
     scene.add(directionalLight);
 
-    // Explanation: Event listeners for mouse interaction
+    // Event listeners for mouse interaction
     renderer.domElement.addEventListener('mousedown', onMouseDown);
     renderer.domElement.addEventListener('mousemove', onMouseMove);
     renderer.domElement.addEventListener('mouseup', onMouseUp);
@@ -183,7 +183,7 @@ function init() {
     animate();
 }
 
-// Explanation: Apply realistic Earth texture with continents
+// Apply realistic Earth texture with continents
 function applyEarthTexture(geometry, material) {
     const pos = geometry.attributes.position;
     const colors = [];
@@ -225,7 +225,7 @@ function applyEarthTexture(geometry, material) {
     material.vertexColors = true;
 }
 
-// Explanation: Mouse interaction handlers
+// Mouse interaction handlers
 function onMouseDown(e) {
     isDragging = true;
     previousMousePosition = { x: e.clientX, y: e.clientY };
@@ -275,7 +275,7 @@ function onClick(e) {
     }
 }
 
-// Explanation: Determine continent from clicked point
+// Determine continent from clicked point
 function getContinentFromPoint(point) {
     const lat = Math.asin(point.y);
     const lon = Math.atan2(point.z, point.x);
@@ -292,7 +292,7 @@ function getContinentFromPoint(point) {
     return null;
 }
 
-// Explanation: Determine country from point (simplified)
+// Determine country from point (simplified)
 function getCountryFromPoint(point) {
     const lat = Math.asin(point.y);
     const lon = Math.atan2(point.z, point.x);
@@ -312,7 +312,7 @@ function getCountryFromPoint(point) {
     return null;
 }
 
-// Explanation: Check for country hover
+// Check for country hover
 function checkCountryHover() {
     raycaster.setFromCamera(mouse, camera);
     const intersects = raycaster.intersectObject(earth);
@@ -331,7 +331,7 @@ function checkCountryHover() {
     }
 }
 
-// Explanation: Show continent information panel
+// Show continent information panel
 function showContinentInfo(continent) {
     selectedContinent = continent;
     const data = continentData[continent];
@@ -346,13 +346,13 @@ function showContinentInfo(continent) {
     document.getElementById('continentPanel').classList.add('active');
 }
 
-// Explanation: Close continent panel
+// Close continent panel
 function closeContinentPanel() {
     selectedContinent = null;
     document.getElementById('continentPanel').classList.remove('active');
 }
 
-// Explanation: Show country information on hover
+// Show country information on hover
 function showCountryInfo(country) {
     const data = countryData[country];
     
@@ -365,7 +365,7 @@ function showCountryInfo(country) {
     document.getElementById('countryPanel').classList.add('active');
 }
 
-// Explanation: Hide country information
+// Hide country information
 function hideCountryInfo() {
     document.getElementById('countryPanel').classList.remove('active');
 }
@@ -376,7 +376,7 @@ function onResize() {
     renderer.setSize(window.innerWidth, window.innerHeight);
 }
 
-// Explanation: Animation loop with auto-rotation
+// Animation loop with auto-rotation
 function animate() {
     requestAnimationFrame(animate);
 
